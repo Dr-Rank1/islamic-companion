@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/settings_title"
+        android:background="@color/primary"
+        app:titleTextColor="@color/text_on_primary" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding">
+
+            <!-- Location — manual city selection from bundled list -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_city" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+            <Spinner android:id="@+id/spinnerCity" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <!-- Theme -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_theme" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <RadioGroup android:id="@+id/rgTheme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                <RadioButton android:id="@+id/rbThemeLight"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_theme_light"  android:layout_marginEnd="12dp"/>
+                <RadioButton android:id="@+id/rbThemeDark"   android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_theme_dark"   android:layout_marginEnd="12dp"/>
+                <RadioButton android:id="@+id/rbThemeSystem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_theme_system"/>
+            </RadioGroup>
+
+            <!-- Calculation Method -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_calc_method" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <Spinner android:id="@+id/spinnerCalcMethod" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <!-- Madhab -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_madhab" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <RadioGroup android:id="@+id/rgMadhab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                <RadioButton android:id="@+id/rbMadhabShafi"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_madhab_shafi"  android:layout_marginEnd="12dp"/>
+                <RadioButton android:id="@+id/rbMadhabHanafi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_madhab_hanafi"/>
+            </RadioGroup>
+
+            <!-- Adhan Voice -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adhan_voice" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <Spinner android:id="@+id/spinnerAdhanVoice" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <!-- Hijri Offset -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_hijri_offset" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderHijriOffset" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-1" android:valueTo="1" android:stepSize="1"/>
+
+            <!-- Prayer Adjustments -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_prayer_adjustments" android:textSize="14sp" android:textColor="@color/primary" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adj_fajr" android:textSize="13sp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderAdjFajr" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-5" android:valueTo="5" android:stepSize="1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adj_dhuhr" android:textSize="13sp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderAdjDhuhr" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-5" android:valueTo="5" android:stepSize="1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adj_asr" android:textSize="13sp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderAdjAsr" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-5" android:valueTo="5" android:stepSize="1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adj_maghrib" android:textSize="13sp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderAdjMaghrib" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-5" android:valueTo="5" android:stepSize="1"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_adj_isha" android:textSize="13sp"/>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderAdjIsha" android:layout_width="match_parent" android:layout_height="wrap_content" android:valueFrom="-5" android:valueTo="5" android:stepSize="1"/>
+
+            <!-- Save -->
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnSaveSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/settings_save"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

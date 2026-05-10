@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/indicatorRow" />
+
+    <!-- Page indicators -->
+    <LinearLayout
+        android:id="@+id/indicatorRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/btnRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:id="@+id/indicator0"
+            android:layout_width="@dimen/onboarding_indicator_active_width"
+            android:layout_height="@dimen/onboarding_indicator_size"
+            android:background="@drawable/indicator_dot"
+            android:layout_marginHorizontal="4dp" />
+
+        <View
+            android:id="@+id/indicator1"
+            android:layout_width="@dimen/onboarding_indicator_size"
+            android:layout_height="@dimen/onboarding_indicator_size"
+            android:background="@drawable/indicator_dot"
+            android:layout_marginHorizontal="4dp" />
+
+        <View
+            android:id="@+id/indicator2"
+            android:layout_width="@dimen/onboarding_indicator_size"
+            android:layout_height="@dimen/onboarding_indicator_size"
+            android:background="@drawable/indicator_dot"
+            android:layout_marginHorizontal="4dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:id="@+id/btnRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_padding"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSkip"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/onboarding_skip"
+            style="@style/Widget.IslamicCompanion.Button.Outlined" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_weight="2"
+            android:text="@string/onboarding_next"
+            style="@style/Widget.IslamicCompanion.Button" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

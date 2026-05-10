@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    TODO: Place the actual Noto Naskh Arabic font file (noto_naskh_arabic.ttf) in this directory.
+    Download from: https://fonts.google.com/noto/specimen/Noto+Naskh+Arabic
+    Or use KFGQPC Uthmanic Script HAFS (for Quran text):
+    https://fonts.qurancomplex.gov.sa/
+
+    Rename the .ttf file to "noto_naskh_arabic.ttf" and place it in res/font/.
+    Then replace this XML file with the actual font file.
+
+    The app gracefully falls back to the system Arabic font if this file is missing at runtime,
+    but the visual experience will be significantly better with the real font file.
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Downloadable font fallback using Google Fonts -->
+    <font
+        app:fontProviderAuthority="com.google.android.gms.fonts"
+        app:fontProviderPackage="com.google.android.gms"
+        app:fontProviderQuery="Noto Naskh Arabic"
+        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs" />
+</font-family>

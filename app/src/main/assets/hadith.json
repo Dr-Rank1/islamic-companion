@@ -1,0 +1,85 @@
+{
+  "_comment": "TODO (RELIGIOUS ACCURACY): Replace with ~200 verified hadiths from Sahih al-Bukhari and Sahih Muslim before publishing. Source: https://sunnah.com (open API) or authenticated offline collection. Current data: 10 sample hadiths for UI testing only.",
+  "hadiths": [
+    {
+      "id": 1,
+      "collection": "Bukhari",
+      "number": "1",
+      "narrator": "Umar ibn Al-Khattab (رضي الله عنه)",
+      "text_arabic": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+      "text_en": "Actions are judged by intentions, and every person will be rewarded according to their intention."
+    },
+    {
+      "id": 2,
+      "collection": "Muslim",
+      "number": "2564",
+      "narrator": "Abu Hurairah (رضي الله عنه)",
+      "text_arabic": "لاَ تَحَاسَدُوا، وَلاَ تَنَاجَشُوا، وَلاَ تَبَاغَضُوا، وَلاَ تَدَابَرُوا",
+      "text_en": "Do not envy one another; do not outbid one another (in order to raise the price); do not hate one another; and do not turn away from one another."
+    },
+    {
+      "id": 3,
+      "collection": "Bukhari",
+      "number": "6018",
+      "narrator": "Abu Hurairah (رضي الله عنه)",
+      "text_arabic": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+      "text_en": "Whoever believes in Allah and the Last Day, let him speak good or remain silent."
+    },
+    {
+      "id": 4,
+      "collection": "Muslim",
+      "number": "223",
+      "narrator": "Abu Malik Al-Harith (رضي الله عنه)",
+      "text_arabic": "الطُّهُورُ شَطْرُ الإِيمَانِ",
+      "text_en": "Purity is half of faith."
+    },
+    {
+      "id": 5,
+      "collection": "Bukhari",
+      "number": "13",
+      "narrator": "Anas ibn Malik (رضي الله عنه)",
+      "text_arabic": "لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",
+      "text_en": "None of you truly believes until he loves for his brother what he loves for himself."
+    },
+    {
+      "id": 6,
+      "collection": "Muslim",
+      "number": "2699",
+      "narrator": "Abu Hurairah (رضي الله عنه)",
+      "text_arabic": "مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ",
+      "text_en": "Whoever takes a path in search of knowledge, Allah will make easy for him a path to Paradise."
+    },
+    {
+      "id": 7,
+      "collection": "Bukhari",
+      "number": "2442",
+      "narrator": "Abdullah ibn Umar (رضي الله عنه)",
+      "text_arabic": "الْمُسْلِمُ أَخُو الْمُسْلِمِ لاَ يَظْلِمُهُ وَلاَ يُسْلِمُهُ",
+      "text_en": "A Muslim is a brother of another Muslim; he does not oppress him, nor does he hand him over (to the enemy)."
+    },
+    {
+      "id": 8,
+      "collection": "Muslim",
+      "number": "2162",
+      "narrator": "Abu Hurairah (رضي الله عنه)",
+      "text_arabic": "إِذَا لَقِيَ أَحَدُكُمْ أَخَاهُ فَلْيُسَلِّمْ عَلَيْهِ",
+      "text_en": "When one of you meets his brother, let him greet him with peace."
+    },
+    {
+      "id": 9,
+      "collection": "Bukhari",
+      "number": "5767",
+      "narrator": "Ibn Abbas (رضي الله عنه)",
+      "text_arabic": "نِعْمَتَانِ مَغْبُونٌ فِيهِمَا كَثِيرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ",
+      "text_en": "There are two blessings which many people lose: health and free time."
+    },
+    {
+      "id": 10,
+      "collection": "Muslim",
+      "number": "2577",
+      "narrator": "Jarir ibn Abdullah (رضي الله عنه)",
+      "text_arabic": "مَنْ لاَ يَرْحَمُ لاَ يُرْحَمُ",
+      "text_en": "He who does not show mercy will not be shown mercy."
+    }
+  ]
+}

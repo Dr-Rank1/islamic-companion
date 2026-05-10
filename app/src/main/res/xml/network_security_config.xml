@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network Security Config — Islamic Companion v3.0
+    - Cleartext (HTTP) is disabled globally.
+    - Only system CAs trusted (no user-installed proxy certs).
+    - Debug builds allow cleartext to localhost for development only.
+
+    TODO (before publishing): add <pin-set> blocks for Overpass and EveryAyah
+    once their certificate fingerprints are confirmed stable. Example format:
+
+    <domain-config>
+        <domain includeSubdomains="true">overpass-api.de</domain>
+        <pin-set expiration="2026-12-31">
+            <pin digest="SHA-256">BASE64_PRIMARY_PIN==</pin>
+            <pin digest="SHA-256">BASE64_BACKUP_PIN==</pin>
+        </pin-set>
+    </domain-config>
+-->
+<network-security-config>
+
+    <!-- Global: no cleartext, only system CAs -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" overridePins="false" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- EveryAyah audio CDN (HTTPS streaming) -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">everyayah.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- OpenStreetMap Overpass API -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">overpass-api.de</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- AdMob / Google -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">admob.com</domain>
+        <domain includeSubdomains="true">googlesyndication.com</domain>
+        <domain includeSubdomains="true">googleadservices.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Debug builds only: allow localhost for dev tools -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </debug-overrides>
+
+</network-security-config>

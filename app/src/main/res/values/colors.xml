@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Muslim-friendly palette — Islamic Companion (light mode)
+
+        Inspiration:
+          Primary green  → Masjid al-Nabawi carpet + dome: deep forest emerald
+          Accent gold    → Islamic manuscript illumination: warm amber, not metallic
+          Backgrounds    → Aged parchment paper: warm cream, not sterile white
+          Text           → Calligraphy ink: warm dark-brown, not cold blue-gray
+          Tertiary       → Laylat al-Qadr sky / Sufism: deep violet-indigo
+    -->
+
+    <!-- Primary — Deep Islamic Emerald -->
+    <color name="primary">#2D6A4F</color>
+    <color name="primary_dark">#1A4A33</color>
+    <color name="primary_light">#52937A</color>
+    <color name="primary_tint_light">#E8F3EE</color>
+    <color name="primary_tint_medium">#B8D8C8</color>
+
+    <!-- Accent — Warm Amber Gold (manuscript illumination) -->
+    <color name="accent">#C4920C</color>
+    <color name="accent_dark">#8A6408</color>
+    <color name="accent_soft">#FDF0CB</color>
+
+    <!-- Tertiary — Deep Violet (Laylat al-Qadr night sky) -->
+    <color name="tertiary">#6B4FA0</color>
+    <color name="tertiary_soft">#EDE5F5</color>
+
+    <!-- Surfaces — warm parchment, not cold white -->
+    <color name="background">#F6F2EB</color>
+    <color name="surface">#FDFAF4</color>
+    <color name="surface_variant">#EDE8DF</color>
+    <color name="surface_elevated">#FDFAF4</color>
+    <color name="card_background">#FDFAF4</color>
+    <color name="card_border">#1A000000</color>
+
+    <!-- Text — warm calligraphy-ink tones, not cold blue-gray -->
+    <color name="text_primary">#1C1710</color>
+    <color name="text_secondary">#6B5F50</color>
+    <color name="text_hint">#A08F7C</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_accent">#1C1710</color>
+
+    <!-- On-surface -->
+    <color name="on_surface">#1C1710</color>
+    <color name="on_surface_variant">#6B5F50</color>
+
+    <!-- Prayer states -->
+    <color name="prayer_next_bg">#D4EBE1</color>
+    <color name="prayer_next_text">#2D6A4F</color>
+    <color name="prayer_passed_alpha">#80000000</color>
+    <color name="prayer_pill_default">#EDE8DF</color>
+    <color name="prayer_pill_next">#D4EBE1</color>
+
+    <!-- Stats -->
+    <color name="streak_flame">#E07820</color>
+    <color name="stat_on_time">#2D6A4F</color>
+    <color name="stat_late">#C4920C</color>
+    <color name="stat_missed">#B03020</color>
+    <color name="stat_bar_bg">#E0D9CF</color>
+
+    <!-- Ramadan — desert sunset, warm lantern light -->
+    <color name="ramadan_primary">#8B4513</color>
+    <color name="ramadan_accent">#D4830F</color>
+    <color name="ramadan_background">#FDF5E6</color>
+    <color name="ramadan_surface">#FEFAEF</color>
+
+    <!-- Eid — celebratory gold and emerald -->
+    <color name="eid_primary">#C4920C</color>
+    <color name="eid_accent">#2D6A4F</color>
+    <color name="eid_background">#FEFCE8</color>
+
+    <!-- Misc -->
+    <color name="divider">#E0D9CF</color>
+    <color name="ripple">#1A2D6A4F</color>
+    <color name="error">#B03020</color>
+    <color name="status_bar">#1A4A33</color>
+    <color name="seed">#2D6A4F</color>
+
+    <!-- Bottom navigation -->
+    <color name="bottom_nav_selected">#2D6A4F</color>
+    <color name="bottom_nav_unselected">#8A7D6E</color>
+
+    <!-- Hero card gradient -->
+    <color name="hero_gradient_start">#2D6A4F</color>
+    <color name="hero_gradient_end">#1A4A33</color>
+
+    <!-- Onboarding indicators -->
+    <color name="onboarding_indicator_active">#2D6A4F</color>
+    <color name="onboarding_indicator_inactive">#C8C0B4</color>
+
+    <!-- Skeleton shimmer -->
+    <color name="skeleton_base">#E0D9CF</color>
+    <color name="skeleton_highlight">#F6F2EB</color>
+</resources>

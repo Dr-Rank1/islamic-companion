@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_worship" android:checkableBehavior="single">
+        <item android:id="@+id/drawer_stats"
+            android:title="Prayer Stats"
+            android:icon="@drawable/ic_home" />
+        <item android:id="@+id/drawer_mosque"
+            android:title="Nearby Mosques"
+            android:icon="@drawable/ic_qibla" />
+        <item android:id="@+id/drawer_calendar"
+            android:title="Hijri Calendar"
+            android:icon="@drawable/ic_home" />
+    </group>
+
+    <group android:id="@+id/group_settings">
+        <item android:id="@+id/drawer_settings"
+            android:title="Settings"
+            android:icon="@drawable/ic_more" />
+        <item android:id="@+id/drawer_security"
+            android:title="Security Check"
+            android:icon="@drawable/ic_notification" />
+    </group>
+
+    <group android:id="@+id/group_share">
+        <item android:id="@+id/drawer_share"
+            android:title="Share the App"
+            android:icon="@drawable/ic_more" />
+        <item android:id="@+id/drawer_rate"
+            android:title="Rate the App"
+            android:icon="@drawable/ic_more" />
+    </group>
+
+</menu>

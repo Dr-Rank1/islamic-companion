@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ===== Permissions ===== -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Required on Android 13+ for apps that use AdMob. Declared per Play policy. -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:name=".IslamicCompanionApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IslamicCompanion"
+        android:usesCleartextTraffic="false"
+        android:enableOnBackInvokedCallback="true">
+
+        <!-- AdMob App ID — injected from keystore.properties via manifestPlaceholders.
+             Test ID is used when keystore.properties is absent (local dev / CI).
+             See ADS_INTEGRATION.md for how to configure real IDs. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
+
+        <!-- Main Activity (post-onboarding) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.IslamicCompanion.Splash"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Deep links: islamiccompanion://prayer/Fajr, islamiccompanion://quran/2/255, etc. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="islamiccompanion" />
+            </intent-filter>
+        </activity>
+
+        <!-- Onboarding Activity — shown on first launch -->
+        <activity
+            android:name=".ui.onboarding.OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.IslamicCompanion.Onboarding"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Adhan Playback foreground service -->
+        <service
+            android:name=".service.AdhanPlaybackService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- Boot receiver — re-schedules prayers after device reboot -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- AlarmManager receiver — exact alarm backup for prayer times -->
+        <receiver
+            android:name=".service.AlarmReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.islamiccompanion.app.PRAYER_ALARM_Fajr" />
+                <action android:name="com.islamiccompanion.app.PRAYER_ALARM_Dhuhr" />
+                <action android:name="com.islamiccompanion.app.PRAYER_ALARM_Asr" />
+                <action android:name="com.islamiccompanion.app.PRAYER_ALARM_Maghrib" />
+                <action android:name="com.islamiccompanion.app.PRAYER_ALARM_Isha" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

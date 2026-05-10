@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Muslim-friendly palette — Islamic Companion (night / dark mode)
+
+        Inspiration:
+          Background   → Night sky over the Haram: deep teal-black, not cold blue-black
+          Primary      → Soft emerald glow (readable on dark, gentle on eyes at Tahajjud)
+          Accent       → Warm lantern gold (like mosque minarets at night)
+          Text         → Warm cream, not harsh white (easier for night prayers)
+          Tertiary     → Softer violet (Laylat al-Qadr stars)
+    -->
+
+    <!-- Primary — Soft Emerald (accessible on deep dark) -->
+    <color name="primary">#4DAA80</color>
+    <color name="primary_dark">#2D6A4F</color>
+    <color name="primary_light">#7AC4A2</color>
+    <color name="primary_tint_light">#0F1F17</color>
+    <color name="primary_tint_medium">#152A1F</color>
+
+    <!-- Accent — Warm Lantern Gold -->
+    <color name="accent">#E6B84A</color>
+    <color name="accent_dark">#C4920C</color>
+    <color name="accent_soft">#231B00</color>
+
+    <!-- Tertiary — Softer Violet for night -->
+    <color name="tertiary">#A48EC7</color>
+    <color name="tertiary_soft">#1E1530</color>
+
+    <!-- Surfaces — deep teal-black, like a mosque at night -->
+    <color name="background">#090D10</color>
+    <color name="surface">#101820</color>
+    <color name="surface_variant">#182230</color>
+    <color name="surface_elevated">#1E2D3E</color>
+    <color name="card_background">#131E2B</color>
+    <color name="card_border">#30FFFFFF</color>
+
+    <!-- Text — warm cream, not harsh white (gentle for night prayers) -->
+    <color name="text_primary">#F2EDE3</color>
+    <color name="text_secondary">#A09282</color>
+    <color name="text_hint">#6B5E50</color>
+    <color name="text_on_primary">#0A1510</color>
+    <color name="text_on_accent">#0A0D10</color>
+
+    <!-- On-surface -->
+    <color name="on_surface">#F2EDE3</color>
+    <color name="on_surface_variant">#A09282</color>
+
+    <!-- Prayer states -->
+    <color name="prayer_next_bg">#152A1F</color>
+    <color name="prayer_next_text">#7AC4A2</color>
+    <color name="prayer_pill_default">#182230</color>
+    <color name="prayer_pill_next">#152A1F</color>
+
+    <!-- Stats -->
+    <color name="stat_bar_bg">#1E2D3E</color>
+    <color name="stat_on_time">#4DAA80</color>
+    <color name="stat_late">#E6B84A</color>
+    <color name="stat_missed">#E07060</color>
+
+    <!-- Ramadan night — warm amber lantern glow -->
+    <color name="ramadan_primary">#C97840</color>
+    <color name="ramadan_accent">#D98A10</color>
+    <color name="ramadan_background">#120D06</color>
+    <color name="ramadan_surface">#1C1408</color>
+
+    <!-- Eid night -->
+    <color name="eid_primary">#E6B84A</color>
+    <color name="eid_accent">#4DAA80</color>
+    <color name="eid_background">#130F00</color>
+
+    <!-- Misc -->
+    <color name="divider">#243040</color>
+    <color name="ripple">#1A4DAA80</color>
+    <color name="error">#E07060</color>
+    <color name="status_bar">#060A0D</color>
+    <color name="streak_flame">#F0903A</color>
+
+    <!-- Bottom navigation -->
+    <color name="bottom_nav_selected">#4DAA80</color>
+    <color name="bottom_nav_unselected">#6B5E50</color>
+
+    <!-- Hero gradient — deep night green -->
+    <color name="hero_gradient_start">#0D2418</color>
+    <color name="hero_gradient_end">#060D0A</color>
+
+    <!-- Onboarding indicators -->
+    <color name="onboarding_indicator_active">#4DAA80</color>
+    <color name="onboarding_indicator_inactive">#243040</color>
+
+    <!-- Skeleton shimmer -->
+    <color name="skeleton_base">#182230</color>
+    <color name="skeleton_highlight">#243040</color>
+</resources>

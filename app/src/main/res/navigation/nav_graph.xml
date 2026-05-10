@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- ===== BOTTOM NAV ROOTS ===== -->
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.islamiccompanion.app.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+        <deepLink app:uri="islamiccompanion://prayer/{prayer_name}" />
+        <action android:id="@+id/action_home_to_quranList" app:destination="@id/quranListFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_home_to_qibla"    app:destination="@id/qiblaFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_home_to_tasbih"   app:destination="@id/tasbihFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_home_to_duaList"  app:destination="@id/duaListFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_home_to_hadith"   app:destination="@id/hadithFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_home_to_stats"    app:destination="@id/statsFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/quranListFragment"
+        android:name="com.islamiccompanion.app.ui.quran.QuranListFragment"
+        android:label="@string/nav_quran"
+        tools:layout="@layout/fragment_quran_list">
+        <action android:id="@+id/action_quranList_to_quranReader"
+            app:destination="@id/quranReaderFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/quranReaderFragment"
+        android:name="com.islamiccompanion.app.ui.quran.QuranReaderFragment"
+        android:label="Quran Reader"
+        tools:layout="@layout/fragment_quran_reader">
+        <argument android:name="surah_number" app:argType="integer" android:defaultValue="1" />
+        <deepLink app:uri="islamiccompanion://quran/{surah_number}/{ayah}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/qiblaFragment"
+        android:name="com.islamiccompanion.app.ui.qibla.QiblaFragment"
+        android:label="@string/nav_qibla"
+        tools:layout="@layout/fragment_qibla">
+        <deepLink app:uri="islamiccompanion://qibla" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.islamiccompanion.app.ui.more.MoreFragment"
+        android:label="@string/nav_more"
+        tools:layout="@layout/fragment_more">
+        <action android:id="@+id/action_more_to_tasbih"   app:destination="@id/tasbihFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_hadith"   app:destination="@id/hadithFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_duaList"  app:destination="@id/duaListFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_names"    app:destination="@id/namesFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_calendar" app:destination="@id/calendarFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_settings" app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_stats"    app:destination="@id/statsFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+        <action android:id="@+id/action_more_to_mosque"   app:destination="@id/mosqueFragment"
+            app:enterAnim="@anim/fade_slide_in" app:exitAnim="@anim/fade_slide_out"/>
+    </fragment>
+
+    <!-- ===== SECONDARY SCREENS ===== -->
+
+    <fragment
+        android:id="@+id/tasbihFragment"
+        android:name="com.islamiccompanion.app.ui.tasbih.TasbihFragment"
+        android:label="@string/tasbih_title"
+        tools:layout="@layout/fragment_tasbih">
+        <deepLink app:uri="islamiccompanion://tasbih/{preset_id}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hadithFragment"
+        android:name="com.islamiccompanion.app.ui.hadith.HadithFragment"
+        android:label="@string/hadith_title"
+        tools:layout="@layout/fragment_hadith">
+        <deepLink app:uri="islamiccompanion://hadith/{collection}/{number}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/duaListFragment"
+        android:name="com.islamiccompanion.app.ui.dua.DuaListFragment"
+        android:label="@string/dua_title"
+        tools:layout="@layout/fragment_dua_list">
+        <deepLink app:uri="islamiccompanion://dua/{category}/{dua_id}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/namesFragment"
+        android:name="com.islamiccompanion.app.ui.names.NamesFragment"
+        android:label="@string/names_title"
+        tools:layout="@layout/fragment_names" />
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.islamiccompanion.app.ui.calendar.CalendarFragment"
+        android:label="@string/calendar_title"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.islamiccompanion.app.ui.settings.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.islamiccompanion.app.ui.stats.StatsFragment"
+        android:label="@string/stats_title"
+        tools:layout="@layout/fragment_stats" />
+
+    <fragment
+        android:id="@+id/mosqueFragment"
+        android:name="com.islamiccompanion.app.ui.mosque.MosqueFragment"
+        android:label="@string/mosque_title"
+        tools:layout="@layout/fragment_mosque" />
+
+    <fragment
+        android:id="@+id/securityCheckFragment"
+        android:name="com.islamiccompanion.app.ui.security.SecurityCheckFragment"
+        android:label="Security Check"
+        tools:layout="@layout/fragment_security_check" />
+
+</navigation>

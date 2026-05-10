@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Islamic Companion</string>
+    <string name="app_tagline">Your daily companion for worship</string>
+
+    <!-- ===== Bottom Navigation ===== -->
+    <string name="nav_home">Home</string>
+    <string name="nav_quran">Quran</string>
+    <string name="nav_qibla">Qibla</string>
+    <string name="nav_more">More</string>
+
+    <!-- ===== Home screen ===== -->
+    <string name="home_title">Islamic Companion</string>
+    <string name="home_next_prayer">Next: %s</string>
+    <string name="home_prayer_times">Today\'s Prayers</string>
+    <string name="home_fajr">Fajr</string>
+    <string name="home_sunrise">Sunrise</string>
+    <string name="home_dhuhr">Dhuhr</string>
+    <string name="home_asr">Asr</string>
+    <string name="home_maghrib">Maghrib</string>
+    <string name="home_isha">Isha</string>
+    <string name="home_fajr_ar">الفجر</string>
+    <string name="home_sunrise_ar">الشروق</string>
+    <string name="home_dhuhr_ar">الظهر</string>
+    <string name="home_asr_ar">العصر</string>
+    <string name="home_maghrib_ar">المغرب</string>
+    <string name="home_isha_ar">العشاء</string>
+    <string name="home_quick_quran">Quran</string>
+    <string name="home_quick_qibla">Qibla</string>
+    <string name="home_quick_tasbih">Tasbih</string>
+    <string name="home_quick_dua">Duas</string>
+    <string name="home_continue_reading">Continue reading</string>
+    <string name="home_at_time">at %s</string>
+    <string name="home_location_unknown">Location unknown</string>
+    <string name="home_sunrise_sunset">Sunrise %1$s · Sunset %2$s</string>
+    <string name="home_refreshed">Prayer times updated</string>
+    <string name="home_hadith_read_more">Read more →</string>
+
+    <!-- Prayer tracking prompts -->
+    <string name="prayer_log_prompt">Did you pray %s?</string>
+    <string name="prayer_log_on_time">On time</string>
+    <string name="prayer_log_late">Late</string>
+    <string name="prayer_log_missed">Missed</string>
+    <string name="prayer_log_saved">Prayer logged</string>
+
+    <!-- Streak -->
+    <string name="streak_days">%d day streak</string>
+    <string name="streak_none">Start your streak today</string>
+    <string name="streak_best">Best: %d days</string>
+    <string name="streak_keep_going">Keep it up! 🔥</string>
+    <string name="streak_title">Prayer Streak</string>
+
+    <!-- ===== Quran ===== -->
+    <string name="quran_title">Quran</string>
+    <string name="surah_list_title">Surahs</string>
+    <string name="share_ayah">Share Ayah</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="bookmarked">Bookmarked</string>
+    <string name="bookmark_removed">Bookmark removed</string>
+    <string name="play_all">Play All</string>
+    <string name="play_from_here">Play from here</string>
+    <string name="stop_audio">Stop</string>
+    <string name="quran_search_hint">Search surahs…</string>
+    <string name="quran_meccan">Meccan</string>
+    <string name="quran_medinan">Medinan</string>
+    <string name="quran_ayahs">%d ayahs</string>
+    <string name="quran_juz">Juz %d</string>
+    <string name="quran_reading_progress">Quran progress</string>
+    <string name="quran_page_mode">Page mode</string>
+    <string name="quran_scroll_mode">Scroll mode</string>
+    <string name="ayah_number">Ayah %d</string>
+    <string name="repeat_ayah">Repeat</string>
+    <string name="tafsir_coming_soon">Tafsir — Coming soon</string>
+    <string name="share_as_image">Share as image</string>
+    <string name="reciter_alafasy">Mishary Alafasy</string>
+    <string name="reciter_basit_murattal">Abdul Basit (Murattal)</string>
+    <string name="reciter_basit_mujawwad">Abdul Basit (Mujawwad)</string>
+    <string name="reciter_sudais">Sudais</string>
+    <string name="reciter_shuraim">Saud Al-Shuraim</string>
+    <string name="reciter_muaiqly">Maher Al-Muaiqly</string>
+    <string name="reciter_ghamdi">Al-Ghamdi</string>
+    <string name="reciter_rifai">Hani Ar-Rifai</string>
+    <string name="reciter_dosari">Yasser Al-Dosari</string>
+    <string name="now_playing">Now playing</string>
+    <string name="mini_player_surah">%1$s · Ayah %2$d</string>
+
+    <!-- ===== Qibla ===== -->
+    <string name="qibla_title">Qibla Direction</string>
+    <string name="qibla_bearing">Qibla: %s from North</string>
+    <string name="qibla_calibrate_warning">Low accuracy — wave your device in a figure-8 to calibrate</string>
+    <string name="qibla_distance">%s km to Mecca</string>
+    <string name="qibla_aligned">Aligned with Qibla ✓</string>
+    <string name="qibla_ar_coming_soon">AR mode — coming soon</string>
+    <string name="qibla_view_ar">View in AR</string>
+    <string name="qibla_degrees">%.1f°</string>
+
+    <!-- ===== Tasbih ===== -->
+    <string name="tasbih_title">Tasbih Counter</string>
+    <string name="tasbih_target">/ %d</string>
+    <string name="tasbih_reset">Reset</string>
+    <string name="tasbih_next">Next</string>
+    <string name="tasbih_target_reached">MashaAllah! 🎉</string>
+    <string name="tasbih_sets">Dhikr Sets</string>
+    <string name="tasbih_morning">Morning Adhkar</string>
+    <string name="tasbih_evening">Evening Adhkar</string>
+    <string name="tasbih_after_prayer">After Prayer</string>
+    <string name="tasbih_custom">Custom Dhikr</string>
+    <string name="tasbih_history">History</string>
+    <string name="tasbih_today_total">Today: %d total</string>
+    <string name="tasbih_set_complete">Set complete! SubhanAllah 🌙</string>
+
+    <!-- ===== Hadith ===== -->
+    <string name="hadith_title">Hadith of the Day</string>
+    <string name="hadith_narrator">Narrated by: %s</string>
+    <string name="share_hadith">Share Hadith</string>
+    <string name="hadith_collection">%1$s — #%2$s</string>
+    <string name="hadith_bookmark">Bookmark</string>
+    <string name="hadith_unbookmark">Remove bookmark</string>
+
+    <!-- ===== Dua ===== -->
+    <string name="dua_title">Duas</string>
+    <string name="dua_detail_title">Dua</string>
+    <string name="dua_source">Source: %s</string>
+    <string name="dua_transliteration">Transliteration</string>
+    <string name="dua_translation">Meaning</string>
+    <string name="dua_repeat_count">%d×</string>
+    <string name="dua_categories">Categories</string>
+    <string name="dua_morning">Morning Adhkar</string>
+    <string name="dua_evening">Evening Adhkar</string>
+    <string name="dua_search_hint">Search duas…</string>
+
+    <!-- ===== 99 Names ===== -->
+    <string name="names_title">99 Names of Allah</string>
+    <string name="names_dhikr_mode">Dhikr Mode</string>
+
+    <!-- ===== Hijri Calendar ===== -->
+    <string name="calendar_title">Hijri Calendar</string>
+    <string name="calendar_today">Today</string>
+    <string name="calendar_prev">‹</string>
+    <string name="calendar_next">›</string>
+    <string name="calendar_gregorian">%s</string>
+    <string name="calendar_hijri_today">Today: %s</string>
+
+    <!-- ===== Mosque Finder ===== -->
+    <string name="mosque_title">Nearby Mosques</string>
+    <string name="mosque_searching">Finding mosques near you…</string>
+    <string name="mosque_empty">No mosques found in this area</string>
+    <string name="mosque_km_away">%.1f km away</string>
+    <string name="mosque_directions">Directions</string>
+    <string name="mosque_radius">Search radius: %d km</string>
+    <string name="mosque_list">List</string>
+    <string name="mosque_map">Map</string>
+
+    <!-- ===== Stats (Prayer analytics) ===== -->
+    <string name="stats_title">Prayer Stats</string>
+    <string name="stats_weekly">This Week</string>
+    <string name="stats_monthly">This Month</string>
+    <string name="stats_all_time">All Time</string>
+    <string name="stats_on_time_pct">On time: %d%%</string>
+    <string name="stats_total_prayers">Total logged: %d</string>
+    <string name="stats_current_streak">Current streak: %d days</string>
+    <string name="stats_best_streak">Best streak: %d days</string>
+    <string name="stats_hardest_prayer">Hardest prayer: %s</string>
+    <string name="stats_reset">Reset all stats</string>
+    <string name="stats_reset_confirm">This will permanently delete all prayer logs and statistics. Are you sure?</string>
+    <string name="stats_reset_done">Stats reset</string>
+    <string name="stats_privacy_note">All data is stored locally on your device only.</string>
+
+    <!-- ===== Ramadan mode ===== -->
+    <string name="ramadan_title">Ramadan Mubarak 🌙</string>
+    <string name="suhoor_countdown">Suhoor ends in</string>
+    <string name="iftar_countdown">Iftar in</string>
+    <string name="ramadan_day">Day %d of Ramadan</string>
+    <string name="iftar_dua_title">Iftar Dua</string>
+    <string name="suhoor_reminder">Suhoor in %d minutes</string>
+    <string name="laylat_al_qadr_title">Laylat al-Qadr</string>
+    <string name="ramadan_checklist">Today\'s Checklist</string>
+    <string name="ramadan_tahajjud">Tahajjud</string>
+    <string name="ramadan_suhoor">Suhoor</string>
+    <string name="ramadan_fajr">Fajr prayer</string>
+    <string name="ramadan_recitation">Quran recitation</string>
+    <string name="ramadan_tarawih">Tarawih</string>
+
+    <!-- ===== Onboarding ===== -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_1_title">Welcome to Islamic Companion</string>
+    <string name="onboarding_1_subtitle">Your beautiful daily companion for prayer times, Quran, dhikr, and much more.</string>
+    <string name="onboarding_2_title">Accurate prayer times</string>
+    <string name="onboarding_2_subtitle">We need your location to calculate the five daily prayer times precisely, wherever you are in the world.</string>
+    <string name="onboarding_2_allow">Allow location access</string>
+    <string name="onboarding_3_title">Never miss a prayer</string>
+    <string name="onboarding_3_subtitle">Enable notifications to receive the Adhan and prayer time reminders on time, every time.</string>
+    <string name="onboarding_3_allow">Enable notifications</string>
+    <string name="onboarding_3_battery">For best results, disable battery optimization for this app after setup.</string>
+
+    <!-- ===== Settings ===== -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="settings_section_prayer">Prayer Times</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="settings_section_audio">Audio</string>
+    <string name="settings_section_display">Display</string>
+    <string name="settings_section_language">Language</string>
+    <string name="settings_section_backup">Backup &amp; Restore</string>
+    <string name="settings_section_reliability">Reliability</string>
+    <string name="settings_section_about">About</string>
+    <string name="settings_city">Location (Manual City)</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_system">System Default</string>
+    <string name="settings_theme_amoled">AMOLED Black</string>
+    <string name="settings_theme_sepia">Sepia</string>
+    <string name="settings_seasonal_themes">Seasonal themes</string>
+    <string name="settings_seasonal_themes_summary">Ramadan and Eid color accents</string>
+    <string name="settings_madhab">Asr Calculation (Madhab)</string>
+    <string name="settings_madhab_shafi">Shafi / Standard</string>
+    <string name="settings_madhab_hanafi">Hanafi</string>
+    <string name="settings_calc_method">Calculation Method</string>
+    <string name="settings_high_latitude">High Latitude Rule</string>
+    <string name="settings_adhan_voice">Adhan Voice</string>
+    <string name="settings_hijri_offset">Hijri Date Offset</string>
+    <string name="settings_prayer_adjustments">Prayer Time Adjustments (minutes)</string>
+    <string name="settings_adj_fajr">Fajr Adjustment</string>
+    <string name="settings_adj_dhuhr">Dhuhr Adjustment</string>
+    <string name="settings_adj_asr">Asr Adjustment</string>
+    <string name="settings_adj_maghrib">Maghrib Adjustment</string>
+    <string name="settings_adj_isha">Isha Adjustment</string>
+    <string name="settings_save">Save Settings</string>
+    <string name="settings_remove_ads">Remove Ads (Coming Soon)</string>
+    <string name="remove_ads_coming_soon">Remove ads feature coming soon!</string>
+    <string name="settings_rewarded_ad">Watch ad to remove ads for 24 hrs</string>
+    <string name="settings_adhan_reliability">Adhan Reliability Mode</string>
+    <string name="settings_adhan_reliability_summary">Use AlarmManager for maximum reliability (recommended for OEM devices)</string>
+    <string name="settings_notif_enabled">Notifications enabled</string>
+    <string name="settings_notif_disabled">Notifications disabled — Tap to fix</string>
+    <string name="settings_battery_unrestricted">Battery unrestricted</string>
+    <string name="settings_battery_restricted">Battery optimised — Tap to fix</string>
+    <string name="settings_exact_alarm_ok">Exact alarms permitted</string>
+    <string name="settings_exact_alarm_denied">Exact alarms denied — Tap to fix</string>
+    <string name="settings_dnd_ok">DND access granted</string>
+    <string name="settings_dnd_denied">DND access not granted</string>
+    <string name="settings_fix">Fix</string>
+    <string name="settings_test_adhan">Test Adhan (fires in 1 min)</string>
+    <string name="settings_test_adhan_scheduled">Test adhan scheduled for 1 minute from now!</string>
+    <string name="settings_backup_export">Export data</string>
+    <string name="settings_backup_import">Import data</string>
+    <string name="settings_backup_summary">Save bookmarks, prayer logs, and settings to a local file</string>
+    <string name="settings_export_ok">Data exported successfully</string>
+    <string name="settings_import_ok">Data imported successfully</string>
+    <string name="settings_about_version">Version %s</string>
+    <string name="settings_about_credits">Credits</string>
+    <string name="settings_about_privacy">Privacy Policy</string>
+    <string name="settings_about_licenses">Open Source Licenses</string>
+    <string name="settings_about_rate">Rate the App</string>
+    <string name="settings_about_share">Share the App</string>
+    <string name="settings_arabic_font">Arabic Font</string>
+    <string name="settings_text_size">Text Size</string>
+    <string name="settings_reciter">Default Quran Reciter</string>
+    <string name="settings_quran_mode">Quran Reading Mode</string>
+    <string name="settings_quran_mode_page">Page (Mushaf style)</string>
+    <string name="settings_quran_mode_scroll">Continuous Scroll</string>
+    <string name="settings_show_translation">Show translation</string>
+
+    <!-- ===== Notification ===== -->
+    <string name="notif_channel_name">Prayer Times</string>
+    <string name="notif_channel_desc">Adhan and prayer-time notifications</string>
+    <string name="notif_prayer_time">Prayer Time</string>
+    <string name="notif_stop_adhan">Stop</string>
+    <string name="notif_time_for_prayer">Time for %s</string>
+    <string name="notif_reminder_before">%s in %d minutes</string>
+    <string name="notif_tap_to_open">Tap to open</string>
+
+    <!-- ===== More screen ===== -->
+    <string name="more_title">More</string>
+    <string name="more_tasbih">Tasbih Counter</string>
+    <string name="more_hadith">Hadith of the Day</string>
+    <string name="more_dua">Dua Collection</string>
+    <string name="more_names">99 Names of Allah</string>
+    <string name="more_calendar">Hijri Calendar</string>
+    <string name="more_settings">Settings</string>
+    <string name="more_stats">Prayer Stats</string>
+    <string name="more_mosque">Nearby Mosques</string>
+
+    <!-- ===== General ===== -->
+    <string name="loading">Loading…</string>
+    <string name="error_loading">Error loading data. Please try again.</string>
+    <string name="error_location">Could not determine your location</string>
+    <string name="error_network">Network unavailable</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="privacy_first">Privacy first — all data stays on your device.</string>
+</resources>

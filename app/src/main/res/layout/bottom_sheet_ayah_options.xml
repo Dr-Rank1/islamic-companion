@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- No ads on this Dua/Quran option sheet -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/surface">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayah Options"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlayAyah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Play Audio"
+        android:layout_marginBottom="8dp"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCopyAyah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy"
+        android:layout_marginBottom="8dp"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShareAyah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:layout_marginBottom="8dp"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBookmarkAyah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bookmark"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+</LinearLayout>

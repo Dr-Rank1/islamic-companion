@@ -1,0 +1,238 @@
+plugins {
+    id 'com.android.application'
+}
+
+// ── Versioning ────────────────────────────────────────────────────────────────
+// Single source of truth. versionCode is auto-derived from versionName so it
+// never gets out of sync. Formula: major*10000 + minor*100 + patch
+// Examples: 1.0.0 → 10000 | 1.2.3 → 10203 | 2.0.0 → 20000
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+
+// ── Signing ───────────────────────────────────────────────────────────────────
+// Reads credentials from keystore.properties (gitignored).
+// Falls back to debug signing for contributors without the upload keystore.
+// See KEYSTORE_SETUP.md for how to generate the upload keystore.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties     = new Properties()
+def hasUploadKeystore      = keystorePropertiesFile.exists()
+if (hasUploadKeystore) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    logger.lifecycle("✓ keystore.properties found — release/staging will use upload key")
+} else {
+    logger.warn("⚠ keystore.properties not found — release/staging fall back to debug signing")
+}
+
+android {
+    namespace  'com.islamiccompanion.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.islamiccompanion.app"
+        minSdk 24
+        targetSdk 34
+
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas"]
+            }
+        }
+
+        // AdMob App ID — injected via keystore.properties or falls back to test ID.
+        // NEVER commit a real AdMob App ID in source. See ADS_INTEGRATION.md.
+        manifestPlaceholders = [
+            admobAppId: (hasUploadKeystore && keystoreProperties['admobAppId'])
+                        ? keystoreProperties['admobAppId']
+                        : 'ca-app-pub-3940256099942544~3347511713' // Google official test ID
+        ]
+
+        // BuildConfig fields so Java code can read ad unit IDs per build type.
+        // Real IDs come from keystore.properties. Test IDs are Google's official ones.
+        buildConfigField "String", "AD_BANNER_ID",
+            "\"${hasUploadKeystore && keystoreProperties['adBannerId']
+                ? keystoreProperties['adBannerId']
+                : 'ca-app-pub-3940256099942544/6300978111'}\""
+
+        buildConfigField "String", "AD_INTERSTITIAL_ID",
+            "\"${hasUploadKeystore && keystoreProperties['adInterstitialId']
+                ? keystoreProperties['adInterstitialId']
+                : 'ca-app-pub-3940256099942544/1033173712'}\""
+
+        buildConfigField "String", "AD_REWARDED_ID",
+            "\"${hasUploadKeystore && keystoreProperties['adRewardedId']
+                ? keystoreProperties['adRewardedId']
+                : 'ca-app-pub-3940256099942544/5224354917'}\""
+
+        buildConfigField "String", "IAP_REMOVE_ADS_SKU", '"remove_ads_lifetime"'
+        buildConfigField "String", "IAP_SADAQAH_1_SKU",  '"sadaqah_1_usd"'
+        buildConfigField "String", "IAP_SADAQAH_3_SKU",  '"sadaqah_3_usd"'
+        buildConfigField "String", "IAP_SADAQAH_5_SKU",  '"sadaqah_5_usd"'
+    }
+
+    signingConfigs {
+        uploadKey {
+            if (hasUploadKeystore) {
+                storeFile     file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias      keystoreProperties['keyAlias']
+                keyPassword   keystoreProperties['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        // ── debug ──────────────────────────────────────────────────────────────
+        // Local dev only. Uses Google's test ad IDs. Never shipped.
+        debug {
+            applicationIdSuffix  ".debug"
+            versionNameSuffix    "-debug"
+            debuggable           true
+            minifyEnabled        false
+        }
+
+        // ── staging ────────────────────────────────────────────────────────────
+        // Identical to release (same R8 rules, same signing) but with suffix so
+        // it can coexist with prod on the same device. Upload to Internal/Closed
+        // tracks. Use real AdMob IDs only after internal approval.
+        staging {
+            applicationIdSuffix  ".staging"
+            versionNameSuffix    "-staging"
+            debuggable           false
+            minifyEnabled        true
+            shrinkResources      true
+            proguardFiles        getDefaultProguardFile('proguard-android-optimize.txt'),
+                                 'proguard-rules.pro'
+            signingConfig        hasUploadKeystore
+                                 ? signingConfigs.uploadKey
+                                 : signingConfigs.debug
+        }
+
+        // ── release ────────────────────────────────────────────────────────────
+        // Production. Signed with upload key. AAB output only (Play App Signing).
+        release {
+            debuggable           false
+            minifyEnabled        true
+            shrinkResources      true
+            proguardFiles        getDefaultProguardFile('proguard-android-optimize.txt'),
+                                 'proguard-rules.pro'
+            signingConfig        hasUploadKeystore
+                                 ? signingConfigs.uploadKey
+                                 : signingConfigs.debug
+        }
+    }
+
+    // ── Android App Bundle splits ─────────────────────────────────────────────
+    // Shrinks per-user download by 30-50%. Required for Play Store since Aug 2021.
+    bundle {
+        language { enableSplit = true }
+        density  { enableSplit = true }
+        abi      { enableSplit = true }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+    // AndroidX Core
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.activity:activity:1.8.2'
+    implementation 'androidx.fragment:fragment:1.6.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+
+    // Material Design 3
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+    implementation 'androidx.navigation:navigation-ui:2.7.6'
+
+    // Room
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    // WorkManager
+    implementation 'androidx.work:work-runtime:2.9.0'
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.7.0'
+
+    // Retrofit + Gson
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Adhan prayer-time calculation
+    implementation 'com.batoulapps.adhan:adhan:1.2.1'
+
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-location:21.2.0'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // Media3 ExoPlayer
+    implementation 'androidx.media3:media3-exoplayer:1.3.0'
+    implementation 'androidx.media3:media3-ui:1.3.0'
+    implementation 'androidx.media3:media3-session:1.3.0'
+
+    // Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+
+    // Preferences + RecyclerView + CardView
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Security — EncryptedSharedPreferences
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+
+    // Stats chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // OkHttp (Mosque finder + remote config)
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // Google Play Billing (IAP — Remove Ads, Sadaqah)
+    implementation 'com.android.billingclient:billing:7.0.0'
+
+    // Google Play In-App Review API
+    implementation 'com.google.android.play:review:2.0.1'
+
+    // Google Play In-App Update API
+    implementation 'com.google.android.play:app-update:2.1.0'
+
+    // Test
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

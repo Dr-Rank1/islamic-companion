@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/tasbih_title"
+        android:background="@color/primary"
+        app:titleTextColor="@color/text_on_primary" />
+
+    <!-- Bead progress visualizer -->
+    <com.islamiccompanion.app.ui.tasbih.BeadView
+        android:id="@+id/beadView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="@dimen/default_padding" />
+
+    <!-- Dhikr Arabic text -->
+    <TextView
+        android:id="@+id/tvDhikrArabic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:textColor="@color/primary"
+        android:textDirection="rtl"
+        android:fontFamily="@font/noto_naskh_arabic"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvDhikrName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="15sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center" />
+
+    <!-- Counter display -->
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:textSize="@dimen/tasbih_counter_size"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:fontFamily="monospace" />
+
+    <TextView
+        android:id="@+id/tvTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/text_secondary" />
+
+    <TextView
+        android:id="@+id/tvDailyTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/text_hint"
+        android:layout_marginTop="4dp" />
+
+    <!-- Large tap button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTap"
+        android:layout_width="@dimen/tasbih_button_size"
+        android:layout_height="@dimen/tasbih_button_size"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:backgroundTint="@color/primary"
+        app:cornerRadius="100dp"
+        android:elevation="4dp"
+        android:contentDescription="@string/tasbih_title" />
+
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tasbih_reset"
+            style="@style/Widget.IslamicCompanion.Button.Outlined" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNextDhikr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tasbih_next"
+            style="@style/Widget.IslamicCompanion.Button.Outlined" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

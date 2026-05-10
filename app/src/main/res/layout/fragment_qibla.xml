@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/qibla_title"
+        android:background="@color/primary"
+        app:titleTextColor="@color/text_on_primary" />
+
+    <!-- No ad on Qibla compass while actively pointing -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="16dp">
+
+        <!-- Calibration warning -->
+        <TextView
+            android:id="@+id/tvCalibrationWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="@color/error"
+            android:background="@color/tertiary_soft"
+            android:text="@string/qibla_calibrate_warning"
+            android:visibility="gone" />
+
+        <!-- Alignment indicator -->
+        <TextView
+            android:id="@+id/tvAligned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qibla_aligned"
+            android:textSize="14sp"
+            android:textColor="@color/stat_on_time"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Compass view -->
+        <com.islamiccompanion.app.ui.qibla.QiblaCompassView
+            android:id="@+id/compassView"
+            android:layout_width="@dimen/compass_size"
+            android:layout_height="@dimen/compass_size"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/qibla_title" />
+
+        <!-- Bearing degrees -->
+        <TextView
+            android:id="@+id/tvQiblaBearing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+        <!-- Distance to Mecca -->
+        <TextView
+            android:id="@+id/tvQiblaDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary" />
+
+        <!-- AR stub button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnArMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/qibla_view_ar"
+            android:enabled="false"
+            style="@style/Widget.IslamicCompanion.Button.Outlined" />
+
+    </LinearLayout>
+
+</LinearLayout>
